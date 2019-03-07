@@ -14,19 +14,22 @@
 - 本组件基于Django1.11开发
 - 在setting.py中注册当前app --> miko
 - 在路由系统中
+  ```python
   from miko.service.miko import site
   urlpatterns = [
     url(r'^miko/', site.urls),
   ]
+  ```
 - 在每个app下生成1个miko.py文件
 - 在miko.py文件内注册Models
+```python
   from miko.service.miko import site,MikoConfig
   
   class PublishConfig(MikoConfig):
     pass
     
   site.register(类名, PublishConfig)
-  
+ ```
   
   
   
